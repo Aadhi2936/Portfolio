@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO META TAGS ============ -->
+<title>Adithya S | Electronics &amp; Communication Engineer — Embedded Systems &amp; VLSI</title>
+<meta name="description" content="Portfolio of Adithya S, an Electronics &amp; Communication Engineering undergraduate specializing in Embedded Systems, PCB Design, VLSI and Digital Electronics. Explore projects, skills and internship experience.">
+<meta name="keywords" content="Adithya S, Electronics and Communication Engineer, ECE Portfolio, Embedded Systems, VLSI, PCB Design, KiCad, Arduino, FPGA, Digital Electronics, National Engineering College">
+<meta name="author" content="Adithya S">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adithya S | Electronics &amp; Communication Engineer">
+<meta property="og:description" content="Embedded Systems &amp; PCB Design portfolio — projects, skills, and experience of Adithya S, ECE undergraduate at National Engineering College.">
+<meta property="og:image" content="https://placehold.co/1200x630/0a1614/c87f4a?text=Adithya+S+%7C+ECE+Portfolio">
+<meta property="og:url" content="https://29adithya.dev">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <svg viewBox="0 0 120 60" class="loader-trace">
+      <path id="loaderPath" d="M5,30 H30 L40,15 H55 L65,45 H80 L90,30 H115" fill="none" stroke="#C87F4A" stroke-width="2"/>
+      <circle cx="5" cy="30" r="3" fill="#7CFFB2"/>
+      <circle cx="115" cy="30" r="3" fill="#7CFFB2"/>
+    </svg>
+    <p class="loader-text">BOOTING<span class="dots">...</span></p>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS BAR (top) ============ -->
+<div id="scrollProgress"></div>
+
+<!-- ============ SIGNATURE: VERTICAL PCB TRACE SECTION TRACKER ============ -->
+<nav id="traceNav" aria-label="Section progress">
+  <svg id="traceLine" width="20" preserveAspectRatio="none"><line x1="10" y1="0" x2="10" y2="100%" /></svg>
+  <div class="trace-vias">
+    <button class="via" data-target="hero"><span class="via-dot"></span><span class="via-label">01 · HOME</span></button>
+    <button class="via" data-target="about"><span class="via-dot"></span><span class="via-label">02 · ABOUT</span></button>
+    <button class="via" data-target="education"><span class="via-dot"></span><span class="via-label">03 · EDU</span></button>
+    <button class="via" data-target="skills"><span class="via-dot"></span><span class="via-label">04 · SKILLS</span></button>
+    <button class="via" data-target="projects"><span class="via-dot"></span><span class="via-label">05 · PROJECTS</span></button>
+    <button class="via" data-target="internship"><span class="via-dot"></span><span class="via-label">06 · INTERN</span></button>
+    <button class="via" data-target="certifications"><span class="via-dot"></span><span class="via-label">07 · CERTS</span></button>
+    <button class="via" data-target="achievements"><span class="via-dot"></span><span class="via-label">08 · STRENGTHS</span></button>
+    <button class="via" data-target="interests"><span class="via-dot"></span><span class="via-label">09 · INTERESTS</span></button>
+    <button class="via" data-target="contact"><span class="via-dot"></span><span class="via-label">10 · CONTACT</span></button>
+  </div>
+</nav>
+
+<!-- ============ TOP NAV (IC chip style) ============ -->
+<header id="topNav">
+  <div class="chip-nav">
+    <span class="pin pin-left"></span>
+    <div class="chip-nav-inner">
+      <a href="#hero" class="brand"><span class="brand-mark">[AS]</span> Adithya<span class="brand-dot">.</span>S</a>
+      <button id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#internship">Internship</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+    <span class="pin pin-right"></span>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO SECTION ============ -->
+<section id="hero">
+  <canvas id="particleCanvas"></canvas>
+  <div class="hero-grid">
+    <div class="hero-copy fade-up">
+      <p class="eyebrow"><span class="eyebrow-dash"></span> ECE UNDERGRADUATE · KOVILPATTI</p>
+      <h1>Adithya <span class="accent-text">S</span></h1>
+      <p class="hero-role">Electronics &amp; Communication Engineer</p>
+      <p class="hero-typing">I build <span id="typedRole" class="typed"></span><span class="caret">|</span></p>
+      <p class="hero-tagline">Turning circuit diagrams into working systems — hands-on with sensors, microcontrollers and PCBs, and adaptable enough to learn whatever the next board demands.</p>
+      <div class="hero-actions">
+        <a href="#" id="resumeBtn" class="btn btn-primary" download="Adithya_S_Resume.pdf">
+          <span>Download Resume</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline"><span>Get In Touch</span></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="8.45" data-decimals="2">0</span><span class="stat-label">CGPA / 10</span></div>
+        <div class="stat"><span class="stat-num" data-count="2">0</span><span class="stat-label">Core Projects</span></div>
+        <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">Internships</span></div>
+        <div class="stat"><span class="stat-num" data-count="4">0</span><span class="stat-label">Design Tools</span></div>
+      </div>
+    </div>
+    <div class="hero-scope fade-up" style="--delay:0.15s">
+      <div class="scope-frame">
+        <div class="scope-header">
+          <span class="scope-title">CH1 · SIGNAL MONITOR</span>
+          <span class="scope-rec">● LIVE</span>
+        </div>
+        <canvas id="scopeCanvas"></canvas>
+        <div class="scope-footer">
+          <span>5V/div</span><span>10ms/div</span><span id="scopeFps">60Hz</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- section divider -->
+<div class="divider" data-divider></div>
+
+<!-- ============ ABOUT SECTION ============ -->
+<section id="about">
+  <div class="section-head fade-up">
+    <span class="section-index">02</span>
+    <h2>About Me</h2>
+    <p class="section-kicker">Who's behind the schematic</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm an Electronics &amp; Communication Engineering undergraduate at <strong>National Engineering College, Kovilpatti</strong>, currently in my final year and maintaining a CGPA of <strong>8.45</strong>. My interest in engineering isn't confined to theory — I like taking a circuit from a schematic on KiCad to a working prototype on a breadboard, and I'm just as comfortable debugging a sensor's noisy output as I am reading a datasheet cover to cover.</p>
+      <p>My core focus areas are <strong>Embedded Systems</strong>, <strong>VLSI</strong>, <strong>Digital Electronics</strong> and <strong>FPGA-based design</strong> — the layers where hardware and logic meet. Through my projects and internships, I've worked hands-on with microcontroller interfacing, sensor-based automation, and PCB layout design, building a practical foundation that complements my classroom learning in BJT circuits, combinational logic and PCB design fundamentals.</p>
+      <p>I'm currently preparing for campus placements with semiconductor and hardware-design companies, looking to apply this foundation on real production-grade problems — and to keep learning the next layer of the stack, whether that's an HDL, a new fab process, or a faster signal chain.</p>
+      <div class="about-tags">
+        <span class="tag">Embedded Systems</span>
+        <span class="tag">VLSI</span>
+        <span class="tag">Digital Electronics</span>
+        <span class="tag">FPGA</span>
+        <span class="tag">PCB Design</span>
+        <span class="tag">Analog Circuits</span>
+      </div>
+    </div>
+    <div class="about-card fade-up" style="--delay:0.15s">
+      <div class="ic-chip">
+        <div class="ic-row">
+          <span class="ic-pin"></span><span class="ic-pin"></span><span class="ic-pin"></span><span class="ic-pin"></span>
+        </div>
+        <div class="ic-body">
+          <p class="ic-label">DATASHEET</p>
+          <ul class="ic-specs">
+            <li><span>Name</span><b>Adithya S</b></li>
+            <li><span>Role</span><b>ECE Undergraduate</b></li>
+            <li><span>Institute</span><b>NEC, Kovilpatti</b></li>
+            <li><span>Batch</span><b>2023 – 2027</b></li>
+            <li><span>CGPA</span><b>8.45 / 10</b></li>
+            <li><span>Focus</span><b>Embedded · VLSI · FPGA</b></li>
+            <li><span>Status</span><b class="ic-status">Placement Ready</b></li>
+          </ul>
+        </div>
+        <div class="ic-row">
+          <span class="ic-pin"></span><span class="ic-pin"></span><span class="ic-pin"></span><span class="ic-pin"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ EDUCATION SECTION ============ -->
+<section id="education">
+  <div class="section-head fade-up">
+    <span class="section-index">03</span>
+    <h2>Education</h2>
+    <p class="section-kicker">Circuit history — signal path so far</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-node"></div>
+      <div class="timeline-card">
+        <span class="timeline-date">2023 — 2027</span>
+        <h3>B.E. Electronics &amp; Communication Engineering</h3>
+        <p class="timeline-org">National Engineering College, Kovilpatti</p>
+        <p>Pursuing a Bachelor's degree in ECE with a growing specialization in embedded systems and hardware design, maintaining strong academic performance across five semesters.</p>
+        <div class="timeline-metric">
+          <span>CGPA</span>
+          <div class="metric-bar"><div class="metric-fill" data-fill="84.5"></div></div>
+          <span class="metric-value">8.45 / 10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up" style="--delay:0.15s">
+      <div class="timeline-node"></div>
+      <div class="timeline-card">
+        <span class="timeline-date">2022 — 2023</span>
+        <h3>Higher Secondary Certificate (HSC)</h3>
+        <p class="timeline-org">Sri Jayendra Saraswathi Swamigal Silver Jubilee School, Tirunelveli</p>
+        <p>Completed higher secondary education with a strong foundation in mathematics and the physical sciences, setting up the base for an engineering degree.</p>
+        <div class="timeline-metric">
+          <span>Score</span>
+          <div class="metric-bar"><div class="metric-fill" data-fill="78.5"></div></div>
+          <span class="metric-value">78.50%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ SKILLS SECTION ============ -->
+<section id="skills">
+  <div class="section-head fade-up">
+    <span class="section-index">04</span>
+    <h2>Technical Skills</h2>
+    <p class="section-kicker">Component bill of materials</p>
+  </div>
+
+  <div class="skills-grid">
+
+    <div class="skill-card fade-up">
+      <div class="skill-card-head"><span class="skill-icon">&#60;/&#62;</span><h3>Programming</h3></div>
+      <ul class="skill-bars">
+        <li><div class="skill-row"><span>C Programming</span><span class="skill-pct">80%</span></div><div class="bar"><div class="bar-fill" data-fill="80"></div></div></li>
+        <li><div class="skill-row"><span>Embedded C</span><span class="skill-pct">72%</span></div><div class="bar"><div class="bar-fill" data-fill="72"></div></div></li>
+        <li><div class="skill-row"><span>Object-Oriented Concepts</span><span class="skill-pct">68%</span></div><div class="bar"><div class="bar-fill" data-fill="68"></div></div></li>
+      </ul>
+    </div>
+
+    <div class="skill-card fade-up" style="--delay:0.05s">
+      <div class="skill-card-head"><span class="skill-icon">&#9889;</span><h3>Hardware</h3></div>
+      <ul class="skill-bars">
+        <li><div class="skill-row"><span>Sensor Interfacing</span><span class="skill-pct">82%</span></div><div class="bar"><div class="bar-fill" data-fill="82"></div></div></li>
+        <li><div class="skill-row"><span>PCB Layout Design</span><span class="skill-pct">75%</span></div><div class="bar"><div class="bar-fill" data-fill="75"></div></div></li>
+        <li><div class="skill-row"><span>Microcontroller Interfacing</span><span class="skill-pct">78%</span></div><div class="bar"><div class="bar-fill" data-fill="78"></div></div></li>
+      </ul>
+    </div>
+
+    <div class="skill-card fade-up" style="--delay:0.1s">
+      <div class="skill-card-head"><span class="skill-icon">&#128187;</span><h3>Software Tools</h3></div>
+      <ul class="skill-bars">
+        <li><div class="skill-row"><span>KiCad</span><span class="skill-pct">80%</span></div><div class="bar"><div class="bar-fill" data-fill="80"></div></div></li>
+        <li><div class="skill-row"><span>CST Studio</span><span class="skill-pct">65%</span></div><div class="bar"><div class="bar-fill" data-fill="65"></div></div></li>
+        <li><div class="skill-row"><span>Arduino IDE</span><span class="skill-pct">85%</span></div><div class="bar"><div class="bar-fill" data-fill="85"></div></div></li>
+        <li><div class="skill-row"><span>Tinkercad</span><span class="skill-pct">80%</span></div><div class="bar"><div class="bar-fill" data-fill="80"></div></div></li>
+      </ul>
+    </div>
+
+    <div class="skill-card fade-up" style="--delay:0.15s">
+      <div class="skill-card-head"><span class="skill-icon">&#9881;</span><h3>Embedded Systems</h3></div>
+      <ul class="skill-bars">
+        <li><div class="skill-row"><span>Microcontroller Fundamentals</span><span class="skill-pct">76%</span></div><div class="bar"><div class="bar-fill" data-fill="76"></div></div></li>
+        <li><div class="skill-row"><span>Sensor-Based Automation</span><span class="skill-pct">80%</span></div><div class="bar"><div class="bar-fill" data-fill="80"></div></div></li>
+        <li><div class="skill-row"><span>Real-Time Interfacing</span><span class="skill-pct">70%</span></div><div class="bar"><div class="bar-fill" data-fill="70"></div></div></li>
+      </ul>
+    </div>
+
+    <div class="skill-card fade-up" style="--delay:0.2s">
+      <div class="skill-card-head"><span class="skill-icon">&#128268;</span><h3>Digital Electronics</h3></div>
+      <ul class="skill-bars">
+        <li><div class="skill-row"><span>Combinational Logic Circuits</span><span class="skill-pct">78%</span></div><div class="bar"><div class="bar-fill" data-fill="78"></div></div></li>
+        <li><div class="skill-row"><span>BJT Circuits</span><span class="skill-pct">72%</span></div><div class="bar"><div class="bar-fill" data-fill="72"></div></div></li>
+        <li><div class="skill-row"><span>PCB Design Fundamentals</span><span class="skill-pct">75%</span></div><div class="bar"><div class="bar-fill" data-fill="75"></div></div></li>
+      </ul>
+    </div>
+
+    <div class="skill-card fade-up" style="--delay:0.25s">
+      <div class="skill-card-head"><span class="skill-icon">&#128172;</span><h3>Communication</h3></div>
+      <ul class="skill-bars">
+        <li><div class="skill-row"><span>Team Collaboration</span><span class="skill-pct">88%</span></div><div class="bar"><div class="bar-fill" data-fill="88"></div></div></li>
+        <li><div class="skill-row"><span>Project Coordination</span><span class="skill-pct">82%</span></div><div class="bar"><div class="bar-fill" data-fill="82"></div></div></li>
+        <li><div class="skill-row"><span>Technical Documentation</span><span class="skill-pct">76%</span></div><div class="bar"><div class="bar-fill" data-fill="76"></div></div></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ PROJECTS SECTION ============ -->
+<section id="projects">
+  <div class="section-head fade-up">
+    <span class="section-index">05</span>
+    <h2>Projects</h2>
+    <p class="section-kicker">Prototypes brought to life</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <article class="project-card fade-up">
+      <div class="project-card-top">
+        <span class="project-icon">&#9878;&#65039;</span>
+        <span class="project-tag">Embedded · Automation</span>
+      </div>
+      <h3>Automated Weight-Controlled Bulk Material Delivery &amp; Split Distribution System</h3>
+
+      <div class="project-block">
+        <span class="project-label">Problem Statement</span>
+        <p>Transport vehicles carrying bulk material often rely on manual, imprecise dispensing — leading to inconsistent delivery quantities and wasted material.</p>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Technologies Used</span>
+        <div class="project-chips"><span>Arduino</span><span>Weight Sensors</span><span>Embedded C</span><span>Actuation Control</span></div>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Key Features</span>
+        <ul><li>Real-time weight sensing for accurate dispensing</li><li>Automated, controlled material delivery</li><li>Split distribution logic for multiple outlets</li></ul>
+      </div>
+      <div class="project-block">
+        <span class="project-label">My Contribution</span>
+        <p>Designed and implemented the sensor interfacing and control logic that ties weight measurement directly to dispensing actuation.</p>
+      </div>
+      <div class="project-block outcome">
+        <span class="project-label">Outcome</span>
+        <p>A working system for accurate, automated bulk material management — reducing manual error in transport vehicle delivery.</p>
+      </div>
+    </article>
+
+    <article class="project-card fade-up" style="--delay:0.15s">
+      <div class="project-card-top">
+        <span class="project-icon">&#128167;</span>
+        <span class="project-tag">Embedded · Sensors</span>
+      </div>
+      <h3>Water Quality Detection System for Fish Feeding</h3>
+
+      <div class="project-block">
+        <span class="project-label">Problem Statement</span>
+        <p>Efficient fish feeding depends on stable water conditions, which are difficult to monitor manually and consistently in real time.</p>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Technologies Used</span>
+        <div class="project-chips"><span>Water Quality Sensors</span><span>Microcontroller</span><span>Embedded Systems</span></div>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Key Features</span>
+        <ul><li>Continuous monitoring of essential water parameters</li><li>Sensor-based data acquisition</li><li>Feeding conditions tuned to real-time water quality</li></ul>
+      </div>
+      <div class="project-block">
+        <span class="project-label">My Contribution</span>
+        <p>Built the sensor-based monitoring pipeline and applied embedded system concepts to translate raw readings into actionable feeding conditions.</p>
+      </div>
+      <div class="project-block outcome">
+        <span class="project-label">Outcome</span>
+        <p>A functional water quality monitoring system that supports healthier, more efficient fish feeding cycles.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ INTERNSHIP SECTION ============ -->
+<section id="internship">
+  <div class="section-head fade-up">
+    <span class="section-index">06</span>
+    <h2>Internship Experience</h2>
+    <p class="section-kicker">Time spent on the bench</p>
+  </div>
+
+  <div class="internship-grid">
+    <div class="internship-card fade-up">
+      <span class="internship-icon">&#128736;&#65039;</span>
+      <h3>PCB Design Internship</h3>
+      <p class="internship-role">Hardware Design Trainee</p>
+      <div class="project-block">
+        <span class="project-label">Responsibilities</span>
+        <ul><li>Designed basic PCB layouts</li><li>Explored schematic development concepts</li></ul>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Skills Learned</span>
+        <div class="project-chips"><span>PCB Layout</span><span>Schematic Design</span><span>Hardware Fundamentals</span></div>
+      </div>
+    </div>
+
+    <div class="internship-card fade-up" style="--delay:0.1s">
+      <span class="internship-icon">&#128295;</span>
+      <h3>Embedded Systems Training</h3>
+      <p class="internship-role">Embedded Systems Trainee</p>
+      <div class="project-block">
+        <span class="project-label">Responsibilities</span>
+        <ul><li>Explored microcontroller concepts &amp; embedded fundamentals</li><li>Practiced basic interfacing techniques</li></ul>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Skills Learned</span>
+        <div class="project-chips"><span>Microcontrollers</span><span>Interfacing</span><span>Embedded Fundamentals</span></div>
+      </div>
+    </div>
+
+    <div class="internship-card fade-up" style="--delay:0.2s">
+      <span class="internship-icon">&#128187;</span>
+      <h3>C Programming Internship</h3>
+      <p class="internship-role">CodSoft</p>
+      <div class="project-block">
+        <span class="project-label">Responsibilities</span>
+        <ul><li>Completed applied C programming tasks</li><li>Strengthened object-oriented programming concepts</li></ul>
+      </div>
+      <div class="project-block">
+        <span class="project-label">Skills Learned</span>
+        <div class="project-chips"><span>C Programming</span><span>OOP Concepts</span><span>Problem Solving</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ CERTIFICATIONS SECTION ============ -->
+<section id="certifications">
+  <div class="section-head fade-up">
+    <span class="section-index">07</span>
+    <h2>Certifications</h2>
+    <p class="section-kicker">Program completions</p>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card fade-up">
+      <span class="cert-icon">&#127891;</span>
+      <h3>PCB Design Fundamentals</h3>
+      <p>Completion of hands-on PCB design internship covering layout and schematic development.</p>
+    </div>
+    <div class="cert-card fade-up" style="--delay:0.1s">
+      <span class="cert-icon">&#127891;</span>
+      <h3>Embedded Systems &amp; Microcontroller Fundamentals</h3>
+      <p>Completion of embedded systems training covering microcontroller concepts and interfacing.</p>
+    </div>
+    <div class="cert-card fade-up" style="--delay:0.2s">
+      <span class="cert-icon">&#127891;</span>
+      <h3>C Programming — CodSoft</h3>
+      <p>Completion of a C programming internship focused on problem-solving and OOP concepts.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ ACHIEVEMENTS / STRENGTHS SECTION ============ -->
+<section id="achievements">
+  <div class="section-head fade-up">
+    <span class="section-index">08</span>
+    <h2>Core Strengths</h2>
+    <p class="section-kicker">What holds the circuit together</p>
+  </div>
+  <div class="achieve-grid">
+    <div class="achieve-card fade-up">
+      <span class="achieve-icon">&#129309;</span>
+      <h3>Team Collaboration &amp; Project Coordination</h3>
+      <p>Comfortable coordinating across a project team, keeping tasks, timelines and technical decisions aligned.</p>
+    </div>
+    <div class="achieve-card fade-up" style="--delay:0.1s">
+      <span class="achieve-icon">&#128260;</span>
+      <h3>Adaptable to Emerging Technologies</h3>
+      <p>Quick to pick up new tools and concepts — from CAD software to new sensor modules — without losing momentum.</p>
+    </div>
+    <div class="achieve-card fade-up" style="--delay:0.2s">
+      <span class="achieve-icon">&#127919;</span>
+      <h3>Self-Driven, Continuous Improvement</h3>
+      <p>Consistently pushes to understand the "why" behind a design choice, not just the "how."</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ AREAS OF INTEREST SECTION ============ -->
+<section id="interests">
+  <div class="section-head fade-up">
+    <span class="section-index">09</span>
+    <h2>Areas of Interest</h2>
+    <p class="section-kicker">Where I want to build next</p>
+  </div>
+  <div class="interest-grid">
+    <div class="interest-card fade-up"><span class="interest-icon">&#129513;</span><h3>Embedded Systems</h3></div>
+    <div class="interest-card fade-up" style="--delay:0.05s"><span class="interest-icon">&#128295;</span><h3>VLSI</h3></div>
+    <div class="interest-card fade-up" style="--delay:0.1s"><span class="interest-icon">&#128268;</span><h3>Digital Design</h3></div>
+    <div class="interest-card fade-up" style="--delay:0.15s"><span class="interest-icon">&#128736;&#65039;</span><h3>FPGA</h3></div>
+    <div class="interest-card fade-up" style="--delay:0.2s"><span class="interest-icon">&#128267;</span><h3>Analog Electronics</h3></div>
+    <div class="interest-card fade-up" style="--delay:0.25s"><span class="interest-icon">&#9881;&#65039;</span><h3>Digital Electronics</h3></div>
+  </div>
+</section>
+
+<div class="divider" data-divider></div>
+
+<!-- ============ CONTACT SECTION ============ -->
+<section id="contact">
+  <div class="section-head fade-up">
+    <span class="section-index">10</span>
+    <h2>Contact</h2>
+    <p class="section-kicker">Let's close the loop</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-text fade-up">
+      <p>Preparing for placements and open to conversations about embedded systems, hardware design, and semiconductor engineering roles. Reach out — I usually reply within a day.</p>
+      <div class="contact-list">
+        <a href="mailto:adithyasnec@gmail.com" class="contact-item">
+          <span class="contact-icon">&#9993;&#65039;</span>
+          <span><span class="contact-label">Email</span><span class="contact-value">adithyasnec@gmail.com</span></span>
+        </a>
+        <a href="tel:+916382141221" class="contact-item">
+          <span class="contact-icon">&#128222;</span>
+          <span><span class="contact-label">Phone</span><span class="contact-value">+91-6382141221</span></span>
+        </a>
+        <a href="https://linkedin.com/in/29adithya" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-icon">&#128188;</span>
+          <span><span class="contact-label">LinkedIn</span><span class="contact-value">/29adithya</span></span>
+        </a>
+        <a href="https://github.com/Aadhi2936" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-icon">&#128187;</span>
+          <span><span class="contact-label">GitHub</span><span class="contact-value">Aadhi2936</span></span>
+        </a>
+        <div class="contact-item contact-item-static">
+          <span class="contact-icon">&#128205;</span>
+          <span><span class="contact-label">Location</span><span class="contact-value">Kovilpatti / Tirunelveli, Tamil Nadu, India</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-card fade-up" style="--delay:0.15s">
+      <div class="scope-frame small">
+        <div class="scope-header">
+          <span class="scope-title">STATUS</span>
+          <span class="scope-rec">● OPEN TO WORK</span>
+        </div>
+        <div class="contact-cta-body">
+          <p>Looking for opportunities in semiconductor &amp; hardware-focused roles.</p>
+          <a href="mailto:adithyasnec@gmail.com" class="btn btn-primary full-width">Say Hello</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="siteFooter">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">[AS]</span>
+      <p>Adithya S — Electronics &amp; Communication Engineer</p>
+    </div>
+    <div class="footer-socials">
+      <a href="mailto:adithyasnec@gmail.com" aria-label="Email">Email</a>
+      <a href="tel:+916382141221" aria-label="Phone">Phone</a>
+      <a href="https://linkedin.com/in/29adithya" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      <a href="https://github.com/Aadhi2936" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Adithya S. Designed &amp; built with HTML, CSS &amp; JS.</p>
+  </div>
+</footer>
+
+<!-- ============ SCROLL TO TOP ============ -->
+<button id="scrollTopBtn" aria-label="Scroll to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
